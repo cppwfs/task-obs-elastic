@@ -1,7 +1,11 @@
 = Timestamp Task
 
-This is a Spring Cloud Task application that utilizes Micrometer and displays
-metrics at the end of the application using the SimpleMeterRegistry.
+Was able to replicate the issue identified in issue 1882.
+Had to run the app around 10 times from the command line to see it replicated.
+Please verify that this sample is using the correct versions.   I've been known to mess that up.
+
+Using the following docker-compose to start an elastic-search instance.
+https://github.com/jonatan-ivanov/local-services/blob/main/elasticsearch/docker-compose.yml
 
 == Requirements:
 
@@ -25,16 +29,3 @@ mvn clean package
 java -jar target/task-observations-3.0.0.jar
 ----
 
-== Native Build:
-
-[source,shell]
-----
-mvn -Pnative clean package
-----
-
-== Native Run:
-
-[source,shell]
-----
-./target/task-observations
-----
